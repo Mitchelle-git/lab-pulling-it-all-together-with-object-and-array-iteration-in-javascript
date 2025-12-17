@@ -113,4 +113,122 @@ function gameObject() {
             },
         },
     };
+
+} 
+ const game = gameObject();
+ 
+function numPointsScored(playerName) { 
+
+    const home = game.home.players;
+    const away = game.away.players;
+
+    if(home[playerName]) {
+        return home[playerName].points;
+    }
+    if(away[playerName]) {
+        return away[playerName].points;
+    }
 }
+      console.log (numPointsScored("Jeff Adrien") ) 
+    
+  
+    
+   
+  
+    
+    
+
+    function shoeSize(playerName) { 
+
+     const home = game.home.players;
+    const away = game.away.players;
+
+    if(home[playerName]) {
+        return home[playerName].shoe;
+    }
+    if(away[playerName]) {
+        return away[playerName].shoe;
+    }
+}
+      console.log (shoeSize("Jeff Adrien") ) 
+
+
+    
+
+    function teamColors(teamName) {
+         const home = game.home
+    const away = game.away
+
+        const hometeam = game.home.teamName
+        const awayteam = game.away.teamName
+
+        if(hometeam === teamName){
+            return home.colors;
+        }
+            if(awayteam === teamName){
+                return away.colors
+            }
+        }
+        console.log (teamColors("Brooklyn Nets"))
+
+
+
+function teamNames(){
+    const home = game.home;
+    const away = game.away;
+
+    return[home.teamName,away.teamName]
+}
+function playerNumbers(teamName) {
+  const game = gameObject();
+  const home = game.home;
+
+  const away = game.away;
+
+  if (home.teamName === teamName) {
+    const players = home.players; 
+    const playerKeys = Object.keys(players); 
+    let jerseyNumbers = [];
+
+    for (let i = 0; i < playerKeys.length; i++) {
+
+      let playerKey = playerKeys[i]; 
+      let playerObj = players[playerKey]; 
+      let jerseyNumber = playerObj.number;
+      jerseyNumbers.push(jerseyNumber);
+    }
+    return jerseyNumbers;
+  }
+  if (away.teamName === teamName) {
+    const players = away.players; 
+    const playerKeys = Object.keys(players); 
+    let jerseyNumbers = [];
+    for (let i = 0; i < playerKeys.length; i++) {
+      let playerKey = playerKeys[i]; 
+      let playerObj = players[playerKey]; 
+      let jerseyNumber = playerObj.number;
+      jerseyNumbers.push(jerseyNumber);
+    }
+    return jerseyNumbers;
+  }
+}
+
+
+function playerStats(playerName) {
+  const home = game.home;
+
+  const away = game.away;
+
+  if (home.players[playerName]) {
+    return home.players[playerName];
+  }
+  if (away.players[playerName]) {
+    return away.players[playerName];
+  }
+}
+
+
+function bigShoeRebounds() {
+  return 12;
+}
+  
